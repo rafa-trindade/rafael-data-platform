@@ -36,14 +36,14 @@ redis:
 Como as portas só existem no `localhost` da VPS, o acesso remoto é feito via túnel SSH, que encaminha as portas locais da VPS para o seu computador de forma criptografada:
 
 ```bash
-ssh -L 5434:localhost:5434 -L 27017:localhost:27017 -L 6379:localhost:6379 rafael@54.39.98.107
+ssh -L 5434:localhost:5434 -L 27017:localhost:27017 -L 6379:localhost:6379 rafael@_ip_
 ```
 
 Enquanto esse terminal SSH permanecer aberto, conecte suas ferramentas (pgAdmin, DBeaver, MongoDB Compass, RedisInsight local, etc) apontando para `localhost:5434`, `localhost:27017`, `localhost:6379` - **não mais para o IP público da VPS**.
 
 Se preferir não deixar um terminal ocupado, é possível abrir o túnel em background:
 
-```bash
+```bashg
 ssh -f -N -L 5434:localhost:5434 -L 27017:localhost:27017 -L 6379:localhost:6379 rafael@_ip_
 ```
 
@@ -64,20 +64,3 @@ sudo ufw allow 8081/tcp   # Mongo Express
 sudo ufw allow 5540/tcp   # RedisInsight
 sudo ufw allow 9443/tcp   # Portainer
 ```
-
-## Itens descartados do projeto após essa mudança
-
-| Item | Motivo |
-|---|---|
-| `scripts/update-my-ip.sh` | Não é mais necessário liberar IP algum - a porta não é alcançável de fora |
-| `.myip` | Arquivo de estado do script acima |
-| Regras UFW allow-por-IP nas portas de banco | Sem efeito depois do bind em loopback |
-| Regras `DOCKER-USER` (RETURN/DROP) nas portas de banco | Abordagem abandonada - não funcionou de forma confiável neste ambiente |
-
-## Auditoria de portas pré-existentes na VPS (mantido do levantamento anterior)
-
-| Porta | O que é | Ação tomada |
-|---|---|---|
-| `2090` | Agente do painel de gerenciamento do provedor (`icontainer.run`) | Mantido - confirmado legítimo |
-| `80` | nginx pré-existente na VPS, fora do Docker | Mantido, apenas documentado |
-| `5432`, `21` | Regras fantasma sem serviço associado | Removidas do UFW |
