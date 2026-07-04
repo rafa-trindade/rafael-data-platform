@@ -14,3 +14,5 @@ projects/*/data/*
 !projects/*/data/.gitkeep
 projects/*/__pycache__/
 projects/*/.env
+
+projects/pandas_drill/config/__pycache__
