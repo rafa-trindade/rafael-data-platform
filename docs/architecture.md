@@ -15,8 +15,7 @@ Todos os serviços compartilham a rede externa `data-platform`, criada uma únic
 
 ## Persistência
 
-- `docker_postgres_data`: volume **externo**, não gerenciado pelo compose. Sobrevive a `docker compose down` e a reinstalações completas do projeto.
-- Demais volumes (`minio_data`, `mongodb_data`, `redis_data`, `redisinsight_data`, `dremio_data`, `portainer_data`): gerenciados pelo compose, recriáveis via `scripts/install.sh`.
+Todos os volumes (`docker_postgres_data`, `minio_data`, `mongodb_data`, `redis_data`, `redisinsight_data`, `dremio_data`, `portainer_data`) são gerenciados pelo compose, criados automaticamente no primeiro `docker compose up -d`.
 
 ## Diagrama lógico
 
