@@ -4,7 +4,7 @@ Lab pessoal de engenharia de dados, self-hosted em VPS via Docker Compose.
 
 ## Stack
 
-PostgreSQL · MinIO · Dremio · MongoDB · Mongo Express · Redis · RedisInsight · Portainer
+PostgreSQL · pgAdmin · MinIO · Dremio · MongoDB · Mongo Express · Redis · RedisInsight · Portainer
 
 Veja detalhes em [`docs/architecture.md`](docs/architecture.md), [`docs/services.md`](docs/services.md) e [`docs/security.md`](docs/security.md).
 

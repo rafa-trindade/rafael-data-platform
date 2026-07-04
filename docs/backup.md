@@ -8,6 +8,8 @@
 - `minio_data.tar.gz` - cópia completa do volume do MinIO
 - `dremio_data.tar.gz` - cópia completa do volume do Dremio (metadados/config)
 
+> O volume `pgadmin_data` (configurações da UI do pgAdmin) não está incluído no backup - não contém dados de negócio, apenas preferências de interface e servidores cadastrados, facilmente recriáveis.
+
 ## Uso
 
 ```bash

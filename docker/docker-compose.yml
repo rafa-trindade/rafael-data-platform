@@ -20,6 +20,24 @@ services:
       timeout: 5s
       retries: 5
 
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: lab-pgadmin
+    depends_on:
+      - postgres
+    environment:
+      TZ: ${TZ}
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+      PGADMIN_CONFIG_SERVER_MODE: "True"
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - data-platform
+    restart: unless-stopped
+
   minio:
     image: minio/minio
     container_name: lab-minio
@@ -136,6 +154,9 @@ volumes:
   docker_postgres_data:
     external: true
     name: docker_postgres_data
+  pgadmin_data:
+    external: true
+    name: pgadmin_data
   minio_data:
     external: true
     name: minio_data

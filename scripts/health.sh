@@ -19,6 +19,7 @@ check_http() {
 check_http "MinIO"        "http://localhost:9000/minio/health/live"
 check_http "Dremio"       "http://localhost:9047"
 check_http "RedisInsight" "http://localhost:5540"
+check_http "pgAdmin" "http://localhost:5050/misc/ping"
 
 # Mongo Express usa Basic Auth: 401 é esperado e significa "no ar"
 MEXP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 3 "http://localhost:8081")

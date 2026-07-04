@@ -17,7 +17,7 @@ Docker Compose com todos os serviços base rodando de forma estável, segura e r
 - [x] Conectar Dremio → PostgreSQL (source JDBC)
 - [x] Conectar Dremio → MinIO (source S3-compatible)
 - [ ] **Exercício 2.1 - Query federada:** subir um CSV qualquer num bucket do MinIO, criar uma tabela pequena no Postgres, e escrever uma query no Dremio que faça JOIN entre os dois numa única consulta SQL. Prova que a camada de query engine funciona de ponta a ponta.
-  - *Ferramentas: Dremio, MinIO, Postgres*
+  - *Ferramentas: Dremio, MinIO, Postgres (pgAdmin ou psql para inspeção manual antes da query federada)*
 
 ---
 
@@ -152,6 +152,7 @@ A partir daqui o foco muda: não é mais "fazer o pipeline funcionar", é tratá
 | Serviço | Exercícios que o utilizam |
 |---|---|
 | PostgreSQL | 2.1, 3.3, 3.4, 4.1, 4.2, 4.3, 4.4, 5.3 |
+| pgAdmin | 2.1, 3.3, 4.2 |
 | MinIO | 2.1, 3.1, 3.2c, 3.3, 4.3, 5.2 |
 | Dremio | 2.1, 3.1c, 4.3, 4.4b, 5.2 |
 | MongoDB | 3.2, 3.6, 5.1 |
