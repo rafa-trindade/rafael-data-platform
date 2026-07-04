@@ -78,10 +78,11 @@ chmod +x scripts/*.sh
 ## Estrutura
 
 ```
-docker/     → compose + env
+docker/     → compose + env (infra core + compose opcional de pipelines)
 docs/       → documentação
 scripts/    → automação operacional
 backups/    → snapshots gerados por backup.sh
+projects/   → exercícios da trilha de estudos (docs/projects.md), cada um autocontido
 ```
 
 ## Licença
