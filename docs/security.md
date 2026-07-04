@@ -9,7 +9,7 @@ Durante os testes iniciais, os logs do Postgres e do MongoDB mostraram tentativa
 1. **UFW sozinho** (`ufw deny 5434/tcp` etc): não bloqueou o tráfego. O Docker manipula tabelas do iptables (`nat`/`filter`) de um jeito que não é filtrado pelas regras padrão do UFW na chain `INPUT` - o tráfego pra portas publicadas pelo Docker passa por outro caminho.
 2. **Regras diretas na chain `DOCKER-USER`** (allow por IP + deny geral): é a abordagem tecnicamente recomendada pela documentação do Docker para esse cenário, mas na prática, testando com o ataque real acontecendo, **o tráfego continuou passando**. Provavelmente inconsistência de versão de Docker/kernel com a ordem de avaliação das chains nesse ambiente específico.
 
-Conclusão: tentar filtrar tráfego que already chega até a interface pública, depois que o Docker já publicou a porta, é uma abordagem frágil nesse ambiente. A solução adotada elimina o problema pela raiz.
+Conclusão: tentar filtrar tráfego que já chega até a interface pública, depois que o Docker já publicou a porta, é uma abordagem frágil nesse ambiente. A solução adotada elimina o problema pela raiz.
 
 ## Solução adotada: bind em loopback + túnel SSH
 
@@ -44,7 +44,7 @@ Enquanto esse terminal SSH permanecer aberto, conecte suas ferramentas (pgAdmin,
 Se preferir não deixar um terminal ocupado, é possível abrir o túnel em background:
 
 ```bash
-ssh -f -N -L 5434:localhost:5434 -L 27017:localhost:27017 -L 6379:localhost:6379 rafael@_ip
+ssh -f -N -L 5434:localhost:5434 -L 27017:localhost:27017 -L 6379:localhost:6379 rafael@_ip_
 ```
 
 Para fechar depois:
