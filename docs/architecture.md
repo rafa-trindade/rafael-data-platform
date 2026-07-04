@@ -13,6 +13,16 @@ Lab de engenharia de dados single-node em VPS, orquestrado via Docker Compose.
 
 Todos os serviços compartilham a rede externa `data-platform`, criada uma única vez fora do compose (`docker network create data-platform`), permitindo que outros stacks futuros se conectem à mesma rede sem redeploy.
 
+## Compose modular
+
+A infra core (`docker-compose.yml`) roda sempre e cobre os 9 serviços base. Ferramentas de pipeline/analytics mais pesadas (Airflow/Dagster, dbt runner, Metabase/Superset) ficam em `docker-compose.pipelines.yml`, um compose adicional que só sobe quando necessário:
+
+```bash
+docker compose -f docker/docker-compose.yml -f docker/docker-compose.pipelines.yml up -d
+```
+
+Isso evita que a VPS (12GB de RAM) rode permanentemente serviços pesados que só são usados durante exercícios específicos das Camadas 3.5, 4.1 e 4.4.
+
 ## Persistência
 
 Todos os volumes principais (`docker_postgres_data`, `minio_data`, `mongodb_data`, `redis_data`, `redisinsight_data`, `dremio_data`, `portainer_data`, `pgadmin_data`) são **externos** (`external: true` + `name:` fixo no compose), criados automaticamente pelo `scripts/install.sh` caso não existam, e nunca gerenciados pelo ciclo de vida do compose. Isso garante:
