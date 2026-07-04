@@ -14,8 +14,8 @@ Docker Compose com todos os serviços base rodando de forma estável e reproduz�
 
 ## Camada 2 - Conectividade ✅
 
-- [x] Conectar Dremio → PostgreSQL (source JDBC)
-- [x] Conectar Dremio → MinIO (source S3-compatible)
+- [x] Conectar Dremio → PostgreSQL (source JDBC) (ver `docs/dremio-connections`)
+- [x] Conectar Dremio → MinIO (source S3-compatible) (ver `docs/dremio-connections`)
 - [ ] **Exercício:** validar uma query federada real no Dremio, unindo uma tabela do Postgres com um arquivo do MinIO numa única consulta SQL. Serve pra confirmar que a camada de query engine está funcionando de ponta a ponta, não só "conectada".
 
 ---
