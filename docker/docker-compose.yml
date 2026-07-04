@@ -1,0 +1,146 @@
+services:
+  postgres:
+    image: postgres:17.5
+    container_name: lab-postgres
+    environment:
+      TZ: ${TZ}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "127.0.0.1:5434:5432"
+    volumes:
+      - docker_postgres_data:/var/lib/postgresql/data
+    networks:
+      - data-platform
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  minio:
+    image: minio/minio
+    container_name: lab-minio
+    command: server /data --console-address ":9001"
+    environment:
+      TZ: ${TZ}
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio_data:/data
+    networks:
+      - data-platform
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  mongodb:
+    image: mongo:latest
+    container_name: lab-mongodb
+    environment:
+      TZ: ${TZ}
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USER}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    ports:
+      - "127.0.0.1:27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - data-platform
+    restart: unless-stopped
+
+  mongo-express:
+    image: mongo-express:latest
+    container_name: lab-mongo-express
+    depends_on:
+      - mongodb
+    environment:
+      TZ: ${TZ}
+      ME_CONFIG_MONGODB_SERVER: lab-mongodb
+      ME_CONFIG_MONGODB_ADMINUSERNAME: ${MONGO_USER}
+      ME_CONFIG_MONGODB_ADMINPASSWORD: ${MONGO_PASSWORD}
+      ME_CONFIG_BASICAUTH_USERNAME: ${MONGO_USER}
+      ME_CONFIG_BASICAUTH_PASSWORD: ${MONGO_PASSWORD}
+    ports:
+      - "8081:8081"
+    networks:
+      - data-platform
+    restart: unless-stopped
+
+  redis:
+    image: redis:latest
+    container_name: lab-redis
+    command: redis-server --requirepass ${REDIS_PASSWORD}
+    environment:
+      TZ: ${TZ}
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - data-platform
+    restart: unless-stopped
+
+  redisinsight:
+    image: redis/redisinsight:latest
+    container_name: lab-redisinsight
+    environment:
+      TZ: ${TZ}
+    ports:
+      - "5540:5540"
+    volumes:
+      - redisinsight_data:/data
+    networks:
+      - data-platform
+    restart: unless-stopped
+
+  dremio:
+    image: dremio/dremio-oss:latest
+    container_name: lab-dremio
+    environment:
+      TZ: ${TZ}
+    ports:
+      - "9047:9047"
+      - "31010:31010"
+      - "45678:45678"
+    volumes:
+      - dremio_data:/opt/dremio/data
+    networks:
+      - data-platform
+    restart: unless-stopped
+
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: lab-portainer
+    environment:
+      TZ: ${TZ}
+    ports:
+      - "8000:8000"
+      - "9443:9443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    networks:
+      - data-platform
+    restart: unless-stopped
+
+volumes:
+  docker_postgres_data:
+  minio_data:
+  mongodb_data:
+  redis_data:
+  redisinsight_data:
+  dremio_data:
+  portainer_data:
+
+networks:
+  data-platform:
+    external: true
