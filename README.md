@@ -10,6 +10,14 @@ Veja detalhes em [`docs/architecture.md`](docs/architecture.md), [`docs/services
 
 ---
 
+## 🎯 Propósito
+
+Este projeto é um laboratório pessoal de engenharia de dados: uma plataforma completa (data lake, DW, query engine, NoSQL, cache) usada como campo de treino para uma trilha estruturada de estudos - de pipelines e orquestração até dbt, CI/CD e disaster recovery.
+
+📚 A trilha completa de exercícios e projetos está em [`docs/projects.md`](docs/projects.md).
+
+---
+
 ## 🚀 Primeira execução (setup do zero)
 
 ```bash
