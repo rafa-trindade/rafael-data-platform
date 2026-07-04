@@ -12,7 +12,7 @@ Docker Compose com todos os serviços base rodando de forma estável, segura e r
 
 ---
 
-## Camada 2 - Conectividade ✅ (falta 1 exercício)
+## Camada 2 - Conectividade
 
 - [x] Conectar Dremio → PostgreSQL (source JDBC)
 - [x] Conectar Dremio → MinIO (source S3-compatible)
@@ -21,7 +21,7 @@ Docker Compose com todos os serviços base rodando de forma estável, segura e r
 
 ---
 
-## Camada 3 - Pipelines (foco atual)
+## Camada 3 - Pipelines
 
 Objetivo: construir um pipeline completo de ingestão → staging → qualidade → orquestração, usando um dataset fictício de e-commerce (vendas, produtos, clientes, eventos de navegação) que será reaproveitado em todas as camadas seguintes.
 
@@ -32,7 +32,7 @@ Objetivo: construir um pipeline completo de ingestão → staging → qualidade 
   - *Ferramentas: MinIO, Python, Dremio*
   - *Conexão: os dados gerados aqui alimentam todos os exercícios seguintes*
 
-### 3.2 NoSQL como fonte operacional (MongoDB entra no jogo)
+### 3.2 NoSQL como fonte operacional
 - [ ] **Exercício 3.2a:** modelar um catálogo de produtos como documentos no MongoDB (produto com atributos variáveis por categoria - exatamente o caso de uso que justifica NoSQL vs relacional). Popular via script Python (`pymongo`)
 - [ ] **Exercício 3.2b:** usar o **Mongo Express** pra inspecionar as collections visualmente, criar índices e comparar performance de queries com/sem índice (`explain()`)
 - [ ] **Exercício 3.2c:** escrever um script de **extração Mongo → MinIO**: exportar o catálogo pra `bronze/produtos/YYYY-MM-DD/produtos.json`. O MongoDB vira uma *fonte* do pipeline, como sistemas operacionais reais são
@@ -69,7 +69,7 @@ Objetivo: construir um pipeline completo de ingestão → staging → qualidade 
 
 ## Camada 4 - Transformação e Analytics
 
-### 4.1 Transformação com dbt (novo serviço)
+### 4.1 Transformação com dbt
 - [ ] **Decisão de ferramenta:** adicionar **dbt** ao projeto (dbt-core rodando em container `lab-dbt`, ou como step do orquestrador - avaliar as duas abordagens)
 - [ ] **Exercício 4.1a:** modelar as camadas `staging` → `intermediate` → `marts` no Postgres com dbt: models, sources, refs
 - [ ] **Exercício 4.1b:** implementar testes do dbt (`unique`, `not_null`, `relationships`) - comparar com o que foi feito manualmente em 3.4 e entender o que cada abordagem cobre
@@ -90,7 +90,7 @@ Objetivo: construir um pipeline completo de ingestão → staging → qualidade 
   - *Ferramentas: Dremio, Postgres, MinIO*
   - *Conexão: consome o DW de 4.2 e o lake de 3.1*
 
-### 4.4 Visualização (novo serviço)
+### 4.4 Visualização
 - [ ] **Decisão de ferramenta:** adicionar BI como serviço do projeto - opções: **Metabase** (mais simples, ideal pra começar) ou **Superset** (mais completo, mais pesado). Container `lab-metabase`/`lab-superset`
 - [ ] **Exercício 4.4a:** conectar o BI ao Postgres (schema `analytics`) e montar um dashboard de vendas: receita ao longo do tempo, top produtos, funil por categoria
 - [ ] **Exercício 4.4b:** conectar o BI ao Dremio (via JDBC, porta 31010) e comparar a experiência vs conexão direta ao Postgres
@@ -118,11 +118,11 @@ A partir daqui o foco muda: não é mais "fazer o pipeline funcionar", é tratá
   - *Ferramentas: GitHub Actions (novo, fora da VPS), todos os serviços*
   - *Conexão: automatiza a entrega de tudo construído nas camadas 3 e 4 - a DAG do 3.5 e os models do 4.1 passam a chegar na VPS sem SSH manual*
 
-### 6.2 Secrets management
+### 6.2 Secrets Management
 - [ ] **Exercício 6.2:** substituir senhas fracas do `.env` por senhas geradas (`openssl rand`), e avaliar `sops`+`age` para versionar secrets criptografados no repo (alternativa leve a um Vault, adequada ao single-node)
   - *Conexão: pré-requisito do 6.1c - o CD não pode depender de um `.env` que só existe na sua máquina*
 
-### 6.3 Disaster recovery de verdade
+### 6.3 Disaster Recovery
 - [ ] **Exercício 6.3:** simular perda total da VPS: a partir **apenas** do repo Git + último backup em local externo, reconstruir a plataforma inteira (clone → install → restore) e cronometrar. O tempo medido é seu RTO real - documentar o resultado
   - *Conexão: teste final de tudo - README (setup), backup.sh/restore.sh (dados) e docs. Se algo faltar, a documentação tinha buraco*
   - *Pré-requisito honesto: hoje os backups ficam na própria VPS; este exercício exige antes resolver o item "backup externo" do backlog*
@@ -130,7 +130,7 @@ A partir daqui o foco muda: não é mais "fazer o pipeline funcionar", é tratá
 ### 6.4 Tradução para cloud (AWS como exercício, não migração)
 > O lab permanece na VPS por decisão de projeto. Esta seção é sobre **falar a língua da cloud**, não sobre migrar.
 
-- [ ] **Exercício 6.4a - Mapa de equivalência:** documentar em `docs/cloud-mapping.md` o equivalente AWS de cada peça: MinIO→S3, Postgres→RDS, Dremio→Athena/Redshift Spectrum, MongoDB→DocumentDB, Redis→ElastiCache, Airflow→MWAA, dbt→dbt Cloud/ECS, Metabase→QuickSight - com prós/contras e ordem de grandeza de custo mensal vs os R$79,90 da VPS
+- [ ] **Exercício 6.4a - Mapa de equivalência:** documentar em `docs/cloud-mapping.md` o equivalente AWS de cada peça: MinIO→S3, Postgres→RDS, Dremio→Athena/Redshift Spectrum, MongoDB→DocumentDB, Redis→ElastiCache, Airflow→MWAA, dbt→dbt Cloud/ECS, Metabase→QuickSight - com prós/contras e ordem de grandeza de custo mensal vs o da VPS
 - [ ] **Exercício 6.4b - Interoperabilidade real:** criar um bucket S3 no free tier da AWS e adaptar o script de ingestão do 3.1 pra escrever nele **sem mudar o código** - só trocando endpoint e credenciais (a API do MinIO é S3-compatible; provar isso na prática é o ponto do exercício)
   - *Conexão: reusa o pipeline do 3.1; o mapa do 6.4a vira seu material de estudo pra entrevistas*
 
