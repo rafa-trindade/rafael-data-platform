@@ -21,7 +21,7 @@ Todos os volumes principais (`docker_postgres_data`, `minio_data`, `mongodb_data
 - Proteção contra perda acidental de dados via `docker compose down -v`
 - Sobrevivem a reinstalações completas do projeto (clone + install), desde que os volumes não sejam removidos manualmente
 
-O MongoDB também usa um volume anônimo (nome gerado automaticamente pelo Docker) para o diretório `/data/configdb`, interno da imagem oficial — não precisa de nome fixo, é gerenciado automaticamente.
+O MongoDB também usa um volume anônimo (nome gerado automaticamente pelo Docker) para o diretório `/data/configdb`, interno da imagem oficial - não precisa de nome fixo, é gerenciado automaticamente.
 
 ## Diagrama lógico
 
