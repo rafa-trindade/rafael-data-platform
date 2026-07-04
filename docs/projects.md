@@ -189,6 +189,12 @@ Fora da sequência de camadas, [`projects/sql-drill/`](../projects/sql-drill/) c
 
 ---
 
+## Prática paralela: Pandas Drills
+
+Também fora da sequência de camadas, [`projects/pandas_drill/`](../projects/pandas_drill/) contém exercícios de análise de dados com pandas, conectando direto no Postgres da VPS via túnel SSH. Os drills consomem os mesmos schemas populados pelos SQL Drills — por exemplo, `drill_pandas_02.py` usa os dados de `drill_sql_02`, permitindo praticar a mesma pergunta analítica primeiro em SQL puro, depois em pandas.
+
+---
+
 ## Princípio geral da trilha
 
 Cada exercício deve deixar algo **testável e demonstrável** antes de avançar - não só "implementado", mas comprovado funcionando com dados reais passando por ele. E cada nova ferramenta entra sempre como serviço containerizado do próprio projeto, documentada em `docs/services.md` e coberta pelo `backup.sh` quando tiver estado persistente.
