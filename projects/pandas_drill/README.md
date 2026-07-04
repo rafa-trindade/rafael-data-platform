@@ -27,8 +27,8 @@ cp .env.example .env
 
 | Arquivo | Fonte de dados | Tema |
 |---|---|---|
-| `drill_pandas_01.py` | `drill_sql_01` (schema no banco `estudos`) | E-commerce - joins, group by, window functions, cohort/Pareto/RFM |
-| `drill_pandas_02.py` | `drill_sql_02` (schema no banco `estudos`) | Vendas de mercado - fundamentos, window functions, datas/nulos/pivot |
+| `scripts/challenges_drill_01.py` | `drill_sql_01` (schema no banco `estudos`) | E-commerce - joins, group by, window functions, cohort/Pareto/RFM |
+| `scripts/challenges_drill_02.py` | `drill_sql_02` (schema no banco `estudos`) | Vendas de mercado - fundamentos, window functions, datas/nulos/pivot |
 
 ## Nota sobre as credenciais
 
