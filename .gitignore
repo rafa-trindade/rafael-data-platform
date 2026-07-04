@@ -8,3 +8,9 @@ backups/*
 # sistema
 .DS_Store
 *.log
+
+projects/*/.venv/
+projects/*/data/*
+!projects/*/data/.gitkeep
+projects/*/__pycache__/
+projects/*/.env
