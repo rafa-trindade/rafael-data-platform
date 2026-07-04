@@ -63,4 +63,5 @@ sudo ufw allow 9047/tcp   # Dremio UI
 sudo ufw allow 8081/tcp   # Mongo Express
 sudo ufw allow 5540/tcp   # RedisInsight
 sudo ufw allow 9443/tcp   # Portainer
+sudo ufw allow 5050/tcp   # pgAdmin
 ```
