@@ -1,0 +1,10 @@
+# secrets
+docker/.env
+
+# backups (podem ser grandes / contêm dados sensíveis)
+backups/*
+!backups/.gitkeep
+
+# sistema
+.DS_Store
+*.log
