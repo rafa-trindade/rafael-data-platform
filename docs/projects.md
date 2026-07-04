@@ -6,6 +6,20 @@ Roadmap de aprendizado prático usando a infraestrutura deste projeto como campo
 
 ---
 
+## Onde o código vive
+
+Cada exercício numerado aqui tem uma pasta correspondente em [`../projects/`](../projects/), com o mesmo número (ex: Exercício 3.4c → pasta `projects/3.4-data-quality/`). Cada pasta é autocontida - README próprio, dependências próprias, ambiente virtual próprio - como se pudesse virar um repositório separado a qualquer momento.
+
+Veja [`projects/README.md`](../projects/README.md) para o índice de status de cada exercício e a convenção de estrutura interna de cada pasta (`_TEMPLATE/` tem o molde pronto pra copiar ao iniciar um exercício novo).
+
+Ferramentas pesadas de pipeline/analytics (Airflow/Dagster, dbt, Metabase/Superset) não rodam na infra core - sobem via `docker-compose.pipelines.yml` só quando a camada correspondente estiver em estudo:
+
+```bash
+docker compose -f docker/docker-compose.yml -f docker/docker-compose.pipelines.yml up -d
+```
+
+---
+
 ## Camada 1 - Infraestrutura ✅
 
 Docker Compose com todos os serviços base rodando de forma estável, segura e reproduzível.
