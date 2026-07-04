@@ -24,13 +24,10 @@ nano docker/.env
 # 3. Dar permissão de execução aos scripts
 chmod +x scripts/*.sh
 
-# 4. Garantir que o volume do Postgres existe (cria só se não existir)
-docker volume inspect docker_postgres_data >/dev/null 2>&1 || docker volume create docker_postgres_data
-
-# 5. Instalar (cria rede, valida .env, sobe a stack)
+# 4. Instalar (cria rede, valida .env, sobe a stack)
 ./scripts/install.sh
 
-# 6. Conferir se subiu tudo certo
+# 5. Conferir se subiu tudo certo
 ./scripts/health.sh
 ```
 
