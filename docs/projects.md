@@ -185,7 +185,7 @@ A partir daqui o foco muda: não é mais "fazer o pipeline funcionar", é tratá
 
 ## Prática paralela: SQL Drills
 
-Fora da sequência de camadas, [`projects/sql-drills/`](../projects/sql-drills/) contém exercícios de SQL para manter fluência de sintaxe - independentes entre si, cada um isolado em seu próprio schema no Postgres.
+Fora da sequência de camadas, [`projects/sql-drill/`](../projects/sql-drill/) contém exercícios diários de SQL para manter fluência de sintaxe — independentes entre si, cada um isolado em seu próprio schema no Postgres.
 
 ---
 
