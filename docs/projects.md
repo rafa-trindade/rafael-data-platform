@@ -180,18 +180,27 @@ A partir daqui o foco muda: não é mais "fazer o pipeline funcionar", é tratá
 | GitHub Actions *(a adicionar)* | 6.1 |
 | sops/age *(a adicionar)* | 6.2 |
 | AWS S3 *(exercício externo)* | 6.4b |
+| SQL (via sql-drill) | prática paralela, não numerada |
+| pandas (via pandas_drill) | prática paralela, não numerada |
+| Python (algoritmos, via python_drill) | prática paralela, não numerada |
 
 ---
 
 ## Prática paralela: SQL Drills
 
-Fora da sequência de camadas, [`projects/sql-drill/`](../projects/sql-drill/) contém exercícios diários de SQL para manter fluência de sintaxe — independentes entre si, cada um isolado em seu próprio schema no Postgres.
+Fora da sequência de camadas, [`projects/sql-drill/`](../projects/sql-drill/) contém exercícios diários de SQL para manter fluência de sintaxe - independentes entre si, cada um isolado em seu próprio schema no Postgres.
 
 ---
 
 ## Prática paralela: Pandas Drills
 
-Também fora da sequência de camadas, [`projects/pandas_drill/`](../projects/pandas_drill/) contém exercícios de análise de dados com pandas, conectando direto no Postgres da VPS via túnel SSH. Os drills consomem os mesmos schemas populados pelos SQL Drills — por exemplo, `drill_pandas_02.py` usa os dados de `drill_sql_02`, permitindo praticar a mesma pergunta analítica primeiro em SQL puro, depois em pandas.
+Também fora da sequência de camadas, [`projects/pandas_drill/`](../projects/pandas_drill/) contém exercícios de análise de dados com pandas, conectando direto no Postgres da VPS via túnel SSH. Os drills consomem os mesmos schemas populados pelos SQL Drills - por exemplo, `drill_pandas_02.py` usa os dados de `drill_sql_02`, permitindo praticar a mesma pergunta analítica primeiro em SQL puro, depois em pandas.
+
+---
+
+## Prática paralela: Python Drills
+
+Também fora da sequência de camadas, [`projects/python_drill/`](../projects/python_drill/) contém desafios de algoritmos e estruturas de dados no formato clássico de entrevista técnica, organizados em três níveis (Junior/Pleno/Sênior). Sem pandas, sem banco de dados - foco em lógica, complexidade e implementação de estruturas na mão (pilha, fila, árvore, grafo, hash map).
 
 ---
 
