@@ -45,12 +45,12 @@ chmod +x scripts/*.sh
 
 | Script | O que faz |
 |--------|-----------|
-| `install.sh` | Setup inicial: cria a rede `data-platform` se não existir, valida se o volume externo do Postgres existe, checa se `docker/.env` foi criado, cria a pasta `backups/` e sobe todos os containers (`up -d`). Rodar só uma vez (ou depois de um reset total). |
+| `install.sh` | Setup inicial: cria a rede `data-platform` se não existir, cria automaticamente os volumes externos que faltarem (Postgres, MinIO, MongoDB, Redis, RedisInsight, Dremio, Portainer, pgAdmin), checa se `docker/.env` foi criado, cria a pasta `backups/` e sobe todos os containers (`up -d`). Rodar só uma vez (ou depois de um reset total). |
 | `start.sh` | Sobe todos os serviços (`docker compose up -d`). Usa se a stack já foi instalada e só precisa ser (re)ligada. |
 | `stop.sh` | Para e remove os containers (`docker compose down`), **sem apagar volumes**. Os dados continuam intactos, só os containers somem até o próximo `start.sh`. |
 | `restart.sh` | Reinicia todos os serviços, ou só um específico se você passar o nome: `./scripts/restart.sh postgres`. |
 | `logs.sh` | Mostra logs em tempo real. Sem argumento, mostra de todos os serviços; com argumento, só do serviço pedido: `./scripts/logs.sh minio`. |
-| `health.sh` | Checagem de saúde: lista status dos containers e testa se cada endpoint HTTP (MinIO, Dremio, Mongo Express, RedisInsight, Portainer) responde, além de testar conexão real no Postgres e no Redis. |
+| `health.sh` | Checagem de saúde: lista status dos containers e testa se cada endpoint HTTP (MinIO, Dremio, Mongo Express, RedisInsight, Portainer, pgAdmin) responde, além de testar conexão real no Postgres e no Redis. |
 | `update.sh` | Puxa as imagens mais recentes (`docker compose pull`), recria os containers com elas e limpa imagens antigas não usadas. |
 | `shell.sh` | Conecta direto no cliente nativo do serviço, já autenticado com as credenciais do `.env`: `psql` (postgres), `mongosh` (mongodb), `redis-cli` (redis). Para os demais serviços (minio, dremio, portainer, mongo-express, redisinsight), abre um shell genérico (`bash`/`sh`) dentro do container. |
 | `exec.sh` | Abre um shell genérico (`bash`/`sh`) dentro de qualquer container, sem lógica de autenticação - útil pra debug bruto: `./scripts/exec.sh postgres`. |
