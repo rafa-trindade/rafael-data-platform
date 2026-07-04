@@ -134,12 +134,26 @@ services:
 
 volumes:
   docker_postgres_data:
+    external: true
+    name: docker_postgres_data
   minio_data:
+    external: true
+    name: minio_data
   mongodb_data:
+    external: true
+    name: mongodb_data
   redis_data:
+    external: true
+    name: redis_data
   redisinsight_data:
+    external: true
+    name: redisinsight_data
   dremio_data:
+    external: true
+    name: dremio_data
   portainer_data:
+    external: true
+    name: portainer_data
 
 networks:
   data-platform:
