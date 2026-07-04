@@ -183,6 +183,12 @@ A partir daqui o foco muda: não é mais "fazer o pipeline funcionar", é tratá
 
 ---
 
+## Prática paralela: SQL Drills
+
+Fora da sequência de camadas, [`projects/sql-drills/`](../projects/sql-drills/) contém exercícios de SQL para manter fluência de sintaxe - independentes entre si, cada um isolado em seu próprio schema no Postgres.
+
+---
+
 ## Princípio geral da trilha
 
 Cada exercício deve deixar algo **testável e demonstrável** antes de avançar - não só "implementado", mas comprovado funcionando com dados reais passando por ele. E cada nova ferramenta entra sempre como serviço containerizado do próprio projeto, documentada em `docs/services.md` e coberta pelo `backup.sh` quando tiver estado persistente.
