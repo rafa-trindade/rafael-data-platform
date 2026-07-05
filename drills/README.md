@@ -1,4 +1,4 @@
-# Drills — Prática Paralela
+# Drills - Prática Paralela
 
 Módulos de prática recorrente, independentes da sequência numerada da trilha principal (`../projects/`). Aqui o foco é preparação para entrevista técnica: SQL, Python, pandas, cenários de engenharia de dados, arquitetura e simulações completas.
 
