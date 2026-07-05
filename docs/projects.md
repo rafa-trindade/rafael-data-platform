@@ -183,6 +183,8 @@ A partir daqui o foco muda: não é mais "fazer o pipeline funcionar", é tratá
 | SQL (via sql-drill) | prática paralela, não numerada |
 | pandas (via pandas_drill) | prática paralela, não numerada |
 | Python (algoritmos, via python_drill) | prática paralela, não numerada |
+| Linux/terminal (via linux_drill) | prática paralela, não numerada |
+| Git (via git_drill) | prática paralela, não numerada |
 | Cenários de pipeline (via data_engineering_interview_drill) | prática paralela, não numerada |
 | Arquitetura/System Design (via data_system_design_drill) | prática paralela, não numerada |
 | Simulação completa (via mock_technical_interviews) | prática paralela, não numerada |
@@ -204,6 +206,20 @@ Também fora da sequência de camadas, [`drills/pandas_drill/`](../drills/pandas
 ## Prática paralela: Python Drills
 
 Também fora da sequência de camadas, [`drills/python_drill/`](../drills/python_drill/) contém desafios de algoritmos e estruturas de dados no formato clássico de entrevista técnica, organizados em três níveis (Junior/Pleno/Sênior). Sem pandas, sem banco de dados - foco em lógica, complexidade e implementação de estruturas na mão (pilha, fila, árvore, grafo, hash map).
+
+---
+
+---
+
+## Prática paralela: Linux Drill
+
+[`drills/linux_drill/`](../drills/linux_drill/) contém exercícios de terminal focados em cenários reais de operação de dados — não é curso genérico de Linux, é o subconjunto usado no dia a dia de pipelines (grep/awk/sed em logs, gestão de processos, diagnóstico de disco/memória, scripts robustos).
+
+---
+
+## Prática paralela: Git Drill
+
+[`drills/git_drill/`](../drills/git_drill/) contém exercícios de controle de versão — a mesma operação central (conflito, merge, rebase) em profundidade e realismo crescentes por nível, não temas diferentes.
 
 ---
 
