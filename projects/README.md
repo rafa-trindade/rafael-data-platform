@@ -50,17 +50,4 @@ docker compose -f docker/docker-compose.yml up -d
 
 Ao começar um exercício novo, copie `_TEMPLATE/README.md` como ponto de partida.
 
-## Prática paralela (fora da numeração)
-
-Essas pastas não correspondem a um exercício numerado da trilha - são prática recorrente, cada uma com sua própria estrutura interna documentada no README local:
-
-| Pasta | O que é |
-|---|---|
-| [`sql-drill/`](sql-drill/) | Exercícios diários de SQL, cada drill isolado em seu próprio schema no Postgres |
-| [`pandas_drill/`](pandas_drill/) | Exercícios de análise de dados com pandas, consumindo os schemas dos SQL Drills |
-| [`python_drill/`](python_drill/) | Desafios de algoritmos e estruturas de dados no formato de entrevista técnica |
-| [`data_engineering_interview_drill/`](data_engineering_interview_drill/) | Cenários práticos de pipeline (dedup, CDC, watermark, checkpoint) |
-| [`data_system_design_drill/`](data_system_design_drill/) | Estudos de caso de arquitetura, com resposta modelo didática |
-| [`mock_technical_interviews/`](mock_technical_interviews/) | Simulações de entrevista completa, cronometradas, misturando todos os temas |
-
 As pastas acima têm estrutura própria, documentada em cada README local - não seguem o molde numerado descrito na seção "Convenção de cada projeto" acima.

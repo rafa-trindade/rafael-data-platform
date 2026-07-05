@@ -78,11 +78,12 @@ chmod +x scripts/*.sh
 ## Estrutura
 
 ```
-docker/     → compose + env (infra core + compose opcional de pipelines)
+docker/     → compose (infra core + docker-compose.pipelines.yml para Airflow/dbt/BI)
 docs/       → documentação
 scripts/    → automação operacional
 backups/    → snapshots gerados por backup.sh
-projects/   → exercícios da trilha de estudos (docs/projects.md), cada um autocontido
+projects/   → trilha de estudos numerada (docs/projects.md), cada exercício autocontido
+drills/     → prática paralela (SQL, pandas, Python, cenários de entrevista, mocks)
 ```
 
 ## Licença

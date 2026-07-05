@@ -15,4 +15,10 @@ projects/*/data/*
 projects/*/__pycache__/
 projects/*/.env
 
-projects/pandas_drill/config/__pycache__
+drills/*/.venv/
+drills/*/data/*
+!drills/*/data/.gitkeep
+drills/*/__pycache__/
+drills/*/*/__pycache__/
+drills/*/.env
+

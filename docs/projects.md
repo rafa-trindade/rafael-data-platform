@@ -191,37 +191,37 @@ A partir daqui o foco muda: não é mais "fazer o pipeline funcionar", é tratá
 
 ## Prática paralela: SQL Drills
 
-Fora da sequência de camadas, [`projects/sql-drill/`](../projects/sql-drill/) contém exercícios diários de SQL para manter fluência de sintaxe - independentes entre si, cada um isolado em seu próprio schema no Postgres.
+Fora da sequência de camadas, [`drills/sql-drill/`](../drills/sql-drill/) contém exercícios diários de SQL para manter fluência de sintaxe - independentes entre si, cada um isolado em seu próprio schema no Postgres.
 
 ---
 
 ## Prática paralela: Pandas Drills
 
-Também fora da sequência de camadas, [`projects/pandas_drill/`](../projects/pandas_drill/) contém exercícios de análise de dados com pandas, conectando direto no Postgres da VPS via túnel SSH. Os drills consomem os mesmos schemas populados pelos SQL Drills - por exemplo, `drill_pandas_02.py` usa os dados de `drill_sql_02`, permitindo praticar a mesma pergunta analítica primeiro em SQL puro, depois em pandas.
+Também fora da sequência de camadas, [`drills/pandas_drill/`](../drills/pandas_drill/) contém exercícios de análise de dados com pandas, conectando direto no Postgres da VPS via túnel SSH. Os drills consomem os mesmos schemas populados pelos SQL Drills - por exemplo, `drill_pandas_02.py` usa os dados de `drill_sql_02`, permitindo praticar a mesma pergunta analítica primeiro em SQL puro, depois em pandas.
 
 ---
 
 ## Prática paralela: Python Drills
 
-Também fora da sequência de camadas, [`projects/python_drill/`](../projects/python_drill/) contém desafios de algoritmos e estruturas de dados no formato clássico de entrevista técnica, organizados em três níveis (Junior/Pleno/Sênior). Sem pandas, sem banco de dados - foco em lógica, complexidade e implementação de estruturas na mão (pilha, fila, árvore, grafo, hash map).
+Também fora da sequência de camadas, [`drills/python_drill/`](../drills/python_drill/) contém desafios de algoritmos e estruturas de dados no formato clássico de entrevista técnica, organizados em três níveis (Junior/Pleno/Sênior). Sem pandas, sem banco de dados - foco em lógica, complexidade e implementação de estruturas na mão (pilha, fila, árvore, grafo, hash map).
 
 ---
 
 ## Prática paralela: Data Engineering Interview Drill
 
-[`projects/data_engineering_interview_drill/`](../projects/data_engineering_interview_drill/) contém cenários práticos de entrevista de Engenharia de Dados - dedup, CDC, watermark, late arriving data, schema evolution, checkpoint/resume - sempre com contexto real de pipeline, sem perguntas teóricas isoladas.
+[`drills/data_engineering_interview_drill/`](../drills/data_engineering_interview_drill/) contém cenários práticos de entrevista de Engenharia de Dados - dedup, CDC, watermark, late arriving data, schema evolution, checkpoint/resume - sempre com contexto real de pipeline, sem perguntas teóricas isoladas.
 
 ---
 
 ## Prática paralela: Data System Design Drill
 
-[`projects/data_system_design_drill/`](../projects/data_system_design_drill/) contém estudos de caso de arquitetura de dados, sem código - cada case tem resposta modelo didática completa (fase de estudo), cobrindo batch vs streaming, idempotência, particionamento, CDC, shuffle/broadcast join, Delta/Iceberg, e arquitetura em escala.
+[`drills/data_system_design_drill/`](../drills/data_system_design_drill/) contém estudos de caso de arquitetura de dados, sem código - cada case tem resposta modelo didática completa (fase de estudo), cobrindo batch vs streaming, idempotência, particionamento, CDC, shuffle/broadcast join, Delta/Iceberg, e arquitetura em escala.
 
 ---
 
 ## Prática paralela: Mock Technical Interviews
 
-[`projects/mock_technical_interviews/`](../projects/mock_technical_interviews/) simula entrevistas completas cronometradas, misturando SQL, Python, Pandas, modelagem, dbt e arquitetura numa única sessão - remixa exercícios dos outros módulos pra treinar troca de contexto sob pressão de tempo.
+[`drills/mock_technical_interviews/`](../drills/mock_technical_interviews/) simula entrevistas completas cronometradas, misturando SQL, Python, Pandas, modelagem, dbt e arquitetura numa única sessão - remixa exercícios dos outros módulos pra treinar troca de contexto sob pressão de tempo.
 
 ---
 
