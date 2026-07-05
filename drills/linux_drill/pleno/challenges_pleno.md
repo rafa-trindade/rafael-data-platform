@@ -1,4 +1,4 @@
-# Linux Drill — Nível Pleno
+# Linux Drill - Nível Pleno
 
 ---
 
@@ -8,13 +8,13 @@
 
 **Tarefa**: usando `docker logs lab-postgres` + `awk`, extraia a terceira "palavra" de cada linha de log (geralmente onde fica o nível) e conte a ocorrência de cada valor distinto.
 
-**Verificação**: você deve conseguir ver algo como uma contagem de "LOG", "FATAL", etc — combine com `sort` + `uniq -c` no final do pipeline.
+**Verificação**: você deve conseguir ver algo como uma contagem de "LOG", "FATAL", etc - combine com `sort` + `uniq -c` no final do pipeline.
 
 ---
 
 ## 2. Substituição de texto em massa (`sed`)
 
-**Cenário**: você quer testar uma mudança no `docker-compose.yml` — trocar temporariamente a porta `9047` do Dremio por `9048` — sem editar manualmente no VS Code.
+**Cenário**: você quer testar uma mudança no `docker-compose.yml` - trocar temporariamente a porta `9047` do Dremio por `9048` - sem editar manualmente no VS Code.
 
 **Tarefa**: use `sed` pra fazer essa substituição direto no terminal, primeiro só EXIBINDO o resultado (sem alterar o arquivo), depois de fato aplicando a mudança num arquivo de cópia (nunca teste `sed -i` direto no arquivo de produção sem backup).
 

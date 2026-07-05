@@ -1,4 +1,4 @@
-# Linux Drill — Nível Junior
+# Linux Drill - Nível Junior
 
 ---
 
@@ -17,7 +17,7 @@
 
 ## 2. Permissões de arquivo
 
-**Cenário**: um script (`scripts/backup.sh`) não está executando quando você tenta rodar `./scripts/backup.sh` — dá erro de "Permission denied".
+**Cenário**: um script (`scripts/backup.sh`) não está executando quando você tenta rodar `./scripts/backup.sh` - dá erro de "Permission denied".
 
 **Tarefa**: diagnostique o problema usando `ls -l`, identifique o que falta, e corrija com `chmod`.
 

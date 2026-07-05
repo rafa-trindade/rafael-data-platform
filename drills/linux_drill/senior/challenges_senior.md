@@ -1,4 +1,4 @@
-# Linux Drill — Nível Sênior
+# Linux Drill - Nível Sênior
 
 ---
 
@@ -14,7 +14,7 @@
 
 ## 2. Paralelismo com `xargs`
 
-**Cenário**: você tem uma lista de 50 arquivos que precisam ser comprimidos (`gzip`), e fazer um por vez é lento — você quer paralelizar.
+**Cenário**: você tem uma lista de 50 arquivos que precisam ser comprimidos (`gzip`), e fazer um por vez é lento - você quer paralelizar.
 
 **Tarefa**: gere 10 arquivos de teste (`touch arquivo_{1..10}.txt`), e use `find` + `xargs -P` (com paralelismo) pra comprimir todos ao mesmo tempo, em vez de um loop sequencial.
 
@@ -22,7 +22,7 @@
 
 ---
 
-## 3. Diagnosticar um pipeline lento — CPU, memória e disco
+## 3. Diagnosticar um pipeline lento - CPU, memória e disco
 
 **Cenário**: alguém reporta que "o servidor está lento" durante a execução de um job pesado. Você precisa descobrir SE o problema é CPU, memória ou disco, sem acesso a ferramenta de monitoramento além do próprio terminal.
 

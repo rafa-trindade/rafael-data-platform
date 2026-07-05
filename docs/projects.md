@@ -213,13 +213,13 @@ Também fora da sequência de camadas, [`drills/python_drill/`](../drills/python
 
 ## Prática paralela: Linux Drill
 
-[`drills/linux_drill/`](../drills/linux_drill/) contém exercícios de terminal focados em cenários reais de operação de dados — não é curso genérico de Linux, é o subconjunto usado no dia a dia de pipelines (grep/awk/sed em logs, gestão de processos, diagnóstico de disco/memória, scripts robustos).
+[`drills/linux_drill/`](../drills/linux_drill/) contém exercícios de terminal focados em cenários reais de operação de dados - não é curso genérico de Linux, é o subconjunto usado no dia a dia de pipelines (grep/awk/sed em logs, gestão de processos, diagnóstico de disco/memória, scripts robustos).
 
 ---
 
 ## Prática paralela: Git Drill
 
-[`drills/git_drill/`](../drills/git_drill/) contém exercícios de controle de versão — a mesma operação central (conflito, merge, rebase) em profundidade e realismo crescentes por nível, não temas diferentes.
+[`drills/git_drill/`](../drills/git_drill/) contém exercícios de controle de versão - a mesma operação central (conflito, merge, rebase) em profundidade e realismo crescentes por nível, não temas diferentes.
 
 ---
 

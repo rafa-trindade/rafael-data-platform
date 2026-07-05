@@ -1,4 +1,4 @@
-# Git Drill — Nível Junior
+# Git Drill - Nível Junior
 
 Crie um sandbox antes de começar:
 ```bash
@@ -31,7 +31,7 @@ mkdir -p ~/git-drill-sandbox && cd ~/git-drill-sandbox && git init
 
 **Cenário**: você precisa trabalhar numa feature sem afetar a branch principal (`main`) até terminar.
 
-**Tarefa**: crie uma branch chamada `feature/teste`, mude pra ela, faça um commit ali, e volte pra `main` — confirme que o commit da feature não aparece na `main`.
+**Tarefa**: crie uma branch chamada `feature/teste`, mude pra ela, faça um commit ali, e volte pra `main` - confirme que o commit da feature não aparece na `main`.
 
 **Verificação**: `git log --oneline` na `main` não deve mostrar o commit feito em `feature/teste`.
 
@@ -51,7 +51,7 @@ mkdir -p ~/git-drill-sandbox && cd ~/git-drill-sandbox && git init
 
 **Cenário**: você e um colega (simulado por você mesmo, em duas branches diferentes) editaram a MESMA linha do mesmo arquivo de jeitos diferentes.
 
-**Tarefa**: crie um arquivo `config.txt` com uma linha `versao=1` na `main`, comite. Crie uma branch `branch-a`, mude a linha pra `versao=2`, comite. Volte pra `main`, mude a mesma linha pra `versao=3`, comite. Tente fazer merge de `branch-a` na `main` — vai dar conflito. Resolva manualmente escolhendo um valor, marque como resolvido, finalize o merge.
+**Tarefa**: crie um arquivo `config.txt` com uma linha `versao=1` na `main`, comite. Crie uma branch `branch-a`, mude a linha pra `versao=2`, comite. Volte pra `main`, mude a mesma linha pra `versao=3`, comite. Tente fazer merge de `branch-a` na `main` - vai dar conflito. Resolva manualmente escolhendo um valor, marque como resolvido, finalize o merge.
 
 **Verificação**: depois de resolver, `git status` deve estar limpo, e o arquivo `config.txt` deve ter só uma versão final da linha (sem os marcadores `<<<<<<<`, `=======`, `>>>>>>>` sobrando).
 
@@ -63,4 +63,4 @@ mkdir -p ~/git-drill-sandbox && cd ~/git-drill-sandbox && git init
 
 **Tarefa**: rode `git fetch` (sem merge automático), depois compare sua branch local com a remota (`git log main..origin/main` ou `git diff main origin/main`), e só então decida rodar `git pull` (ou `git merge origin/main`) pra aplicar.
 
-**Verificação**: depois do `fetch`, seus arquivos locais não devem ter mudado ainda — só depois do merge/pull explícito.
+**Verificação**: depois do `fetch`, seus arquivos locais não devem ter mudado ainda - só depois do merge/pull explícito.

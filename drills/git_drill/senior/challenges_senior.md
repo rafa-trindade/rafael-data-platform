@@ -1,4 +1,4 @@
-# Git Drill — Nível Sênior
+# Git Drill - Nível Sênior
 
 ---
 
@@ -24,7 +24,7 @@
 
 ## 3. Conflito em arquivo gerado automaticamente (lock file)
 
-**Cenário**: dois desenvolvedores adicionaram dependências Python diferentes ao mesmo projeto, e o `requirements.txt` (ou um lock file equivalente) tem conflito — mas esse tipo de arquivo não deve ser editado "criativamente" como texto livre, tem estrutura/ordem que importa.
+**Cenário**: dois desenvolvedores adicionaram dependências Python diferentes ao mesmo projeto, e o `requirements.txt` (ou um lock file equivalente) tem conflito - mas esse tipo de arquivo não deve ser editado "criativamente" como texto livre, tem estrutura/ordem que importa.
 
 **Tarefa**: simule duas branches adicionando linhas diferentes ao mesmo `requirements.txt` na mesma posição. Ao resolver o conflito, em vez de escolher um lado ou o outro arbitrariamente, **combine ambas as dependências** de forma que o arquivo final faça sentido (sem duplicar, mantendo ordem alfabética se essa for a convenção do projeto).
 
@@ -46,9 +46,9 @@
 
 **Cenário**: você é responsável por decidir a estratégia de branching de um time que versiona pipelines dbt e scripts de ingestão. Deploys em produção acontecem via CI/CD ao mergear na `main`.
 
-**Tarefa** (conceitual, sem código — registre sua resposta em um arquivo `.md`):
+**Tarefa** (conceitual, sem código - registre sua resposta em um arquivo `.md`):
 1. Você recomendaria trunk-based development ou GitFlow pra esse time? Justifique considerando a frequência de deploy.
-2. Como você trataria uma mudança de schema no dbt que precisa ser testada em um ambiente intermediário antes de ir pra produção — isso muda sua resposta acima?
+2. Como você trataria uma mudança de schema no dbt que precisa ser testada em um ambiente intermediário antes de ir pra produção - isso muda sua resposta acima?
 3. Quem revisa um PR de mudança de modelagem dimensional antes do merge, e o que esse review deveria verificar (além de sintaxe)?
 
-**Verificação**: sua resposta deve reconhecer o trade-off central — trunk-based favorece deploy contínuo e simplicidade, mas exige feature flags/testes robustos; GitFlow dá mais controle de "quando" algo vai pra produção, mas adiciona overhead de coordenação. Não existe resposta "certa" única — o que importa é justificar pro contexto dado.
+**Verificação**: sua resposta deve reconhecer o trade-off central - trunk-based favorece deploy contínuo e simplicidade, mas exige feature flags/testes robustos; GitFlow dá mais controle de "quando" algo vai pra produção, mas adiciona overhead de coordenação. Não existe resposta "certa" única - o que importa é justificar pro contexto dado.
