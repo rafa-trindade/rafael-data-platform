@@ -2,7 +2,7 @@
 
 Roadmap de aprendizado prático usando a infraestrutura deste projeto como campo de treino real. Cada fase usa os serviços já existentes e se conecta à anterior - os dados criados num exercício alimentam o seguinte, simulando o ciclo de vida real de uma plataforma de dados.
 
-**Serviços cobertos pela trilha:** PostgreSQL · MinIO · Dremio · MongoDB · Redis · Mongo Express · RedisInsight · Portainer - sem exceção. Serviços que ainda não existem na stack (orquestrador, dbt, BI, CDC) entram como **novos containers do próprio projeto** (mesma rede `data-platform`, container `lab-*`, nunca instalação solta na VPS).
+**Serviços cobertos pela trilha:** PostgreSQL · pgAdmin · MinIO · Dremio · MongoDB · Redis · Mongo Express · RedisInsight · Portainer - sem exceção. Serviços que ainda não existem na stack (orquestrador, dbt, BI, CDC) entram como **novos containers do próprio projeto** (mesma rede `data-platform`, container `lab-*`, nunca instalação solta na VPS).
 
 ---
 
@@ -17,6 +17,8 @@ Ferramentas pesadas de pipeline/analytics (Airflow/Dagster, dbt, Metabase/Supers
 ```bash
 docker compose -f docker/docker-compose.yml -f docker/docker-compose.pipelines.yml up -d
 ```
+
+Além da trilha numerada, [`drills/`](../drills/) reúne toda a prática paralela recorrente (SQL, pandas, Python, Linux, Git, cenários de pipeline, system design, mocks) - veja [`drills/README.md`](../drills/README.md) para o índice completo. As seções "Prática paralela" ao longo deste documento linkam direto pra cada uma.
 
 ---
 
@@ -206,8 +208,6 @@ Também fora da sequência de camadas, [`drills/pandas_drill/`](../drills/pandas
 ## Prática paralela: Python Drills
 
 Também fora da sequência de camadas, [`drills/python_drill/`](../drills/python_drill/) contém desafios de algoritmos e estruturas de dados no formato clássico de entrevista técnica, organizados em três níveis (Junior/Pleno/Sênior). Sem pandas, sem banco de dados - foco em lógica, complexidade e implementação de estruturas na mão (pilha, fila, árvore, grafo, hash map).
-
----
 
 ---
 
