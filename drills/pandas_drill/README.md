@@ -13,12 +13,13 @@ Deixe esse terminal aberto enquanto rodar os drills.
 ## Setup
 
 ```bash
-cd projects/pandas_drill
-python -m venv .venv
+cd drills/pandas_drill
+python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 pip install ipykernel
 python -m ipykernel install --user --name=pandas_drill --display-name="Python (pandas_drill)"
+CTRL+SHIFT+P > Developer: Reload Window
 cp .env.example .env
 # edite .env com as credenciais (mesmas do docker/.env do projeto principal)
 ```
