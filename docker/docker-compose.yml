@@ -31,7 +31,7 @@ services:
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
       PGADMIN_CONFIG_SERVER_MODE: "True"
     ports:
-      - "5050:80"
+      - "127.0.0.1:5050:80"
     volumes:
       - pgadmin_data:/var/lib/pgadmin
     networks:
@@ -47,8 +47,8 @@ services:
       MINIO_ROOT_USER: ${MINIO_ROOT_USER}
       MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
     ports:
-      - "9000:9000"
-      - "9001:9001"
+      - "127.0.0.1:9000:9000"
+      - "127.0.0.1:9001:9001"
     volumes:
       - minio_data:/data
     networks:
@@ -88,7 +88,7 @@ services:
       ME_CONFIG_BASICAUTH_USERNAME: ${MONGO_USER}
       ME_CONFIG_BASICAUTH_PASSWORD: ${MONGO_PASSWORD}
     ports:
-      - "8081:8081"
+      - "127.0.0.1:8081:8081"
     networks:
       - data-platform
     restart: unless-stopped
@@ -113,7 +113,7 @@ services:
     environment:
       TZ: ${TZ}
     ports:
-      - "5540:5540"
+      - "127.0.0.1:5540:5540"
     volumes:
       - redisinsight_data:/data
     networks:
@@ -126,9 +126,9 @@ services:
     environment:
       TZ: ${TZ}
     ports:
-      - "9047:9047"
-      - "31010:31010"
-      - "45678:45678"
+      - "127.0.0.1:9047:9047"
+      - "127.0.0.1:31010:31010"
+      - "127.0.0.1:45678:45678"
     volumes:
       - dremio_data:/opt/dremio/data
     networks:
@@ -141,8 +141,8 @@ services:
     environment:
       TZ: ${TZ}
     ports:
-      - "8000:8000"
-      - "9443:9443"
+      - "127.0.0.1:8000:8000"
+      - "127.0.0.1:9443:9443"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
